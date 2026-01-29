@@ -7,6 +7,7 @@ Currently the extension development does not consider notebook permission, versi
 * Zeppelin notebook file rendered in VS Code, just like Juypter Notebook does.
 * Paragraph runnable (either in sequence or in parallel) in notebook, by communicating with Zeppelin server.
 * Local changes automatically synced with server, vice versa.
+* **NEW:** Enhanced table formatting for SQL query results with download capabilities (CSV, JSON, TSV) and copy-to-clipboard functionality.
 
 ## Get Started
 * Install Zeppelin VS Code Extension.
@@ -24,6 +25,7 @@ Currently the extension development does not consider notebook permission, versi
 * Internally local changes to the notebook are updated to the Zeppelin server in every 3 seconds (by default),
   and local notebook file will be completely replaced by the server version __every time it is opened or activated__. You may disable this in settings.
 * If you cannot see the progress bar, it is in the text output, you can toggle output type by clicking "..." button at the left side of the cell output.
+* **SQL query results are automatically formatted as interactive tables** with download buttons. Click "⬇ CSV", "⬇ JSON", or "⬇ TSV" to download results, or "📋 Copy" to copy to clipboard.
 * Please avoid modifying a running cell (i.e., editing, moving cell, cut/copy and paste cell. Deleting is allowed) as Zeppelin doesn't support this while VSCode does. If you accidentally did this, close and reopen the notebook to ensure the notebook is synced.
 * The interaction with local git is still under development, use with caution!
 

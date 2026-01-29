@@ -250,3 +250,28 @@ All notable changes to the "zeppelin-vscode" extension will be documented in thi
 - [New cell execution policy: 'by interpreter' dispatches executions to corresponding interpreter, with concurrency determined by interpreter setting on Zeppelin server](https://github.com/allen-li1231/zeppelin-vscode/commit/c642d8e89a7378877a322be11abfa7a4d7ca2e82), hopefully resolving #29.
 - [Improve creating paragraph prompt message](https://github.com/allen-li1231/zeppelin-vscode/commit/af8d9271d1cd15c95f2a57f73aaa1b663c036f60).
 - [Remove duplicated update operation during cell status bar updating](https://github.com/allen-li1231/zeppelin-vscode/commit/ee92a20827263993fab3d764eb134265984382ca).
+
+
+## [Unreleased]
+
+### Added
+- **Enhanced table formatting for SQL query results**: SQL queries now display results in beautifully formatted HTML tables with:
+  - Sticky headers that remain visible when scrolling
+  - Alternating row colors for better readability
+  - Hover effects on rows
+  - Responsive layout that adapts to VS Code themes
+  - Row and column count display
+  - Scrollable view for large datasets (max height 600px)
+- **Download functionality**: Download query results in multiple formats:
+  - CSV (comma-separated values) - ideal for Excel, Google Sheets
+  - JSON (array of objects) - ideal for APIs and data processing
+  - TSV (tab-separated values) - original Zeppelin format
+- **Copy to clipboard**: One-click copy of table data as CSV format
+- **XSS protection**: All table data is properly escaped to prevent security issues
+- Automatic detection of `%table` output format from Zeppelin
+
+### Technical Changes
+- Added `src/common/tableFormatter.ts` module for table parsing and HTML generation
+- Updated `src/common/parser.ts` to integrate table formatting in output parsing
+- Added comprehensive test coverage in `src/test/tableFormatter.test.ts`
+- Added documentation in `TABLE_FORMATTING.md`
